@@ -14,6 +14,8 @@ Pour chaque bien, le moteur calcule, **avant impôt** :
 
 Il compare plusieurs biens et les classe du meilleur au moins bon cashflow.
 
+Le détail de chaque calcul est décrit dans les **[règles de gestion](docs/regles-de-gestion.md)**.
+
 ## Hypothèses par défaut (modifiables bien par bien)
 
 | Paramètre | Valeur |
