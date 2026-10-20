@@ -181,6 +181,20 @@ def test_rg64_cashflow_quasi_nul_exclu_du_top4():
     assert not r.eligible_top4
 
 
+def test_rg63_cashflow_sous_100_euros_quasi_nul():
+    # 10 800 - 9 840 = 960 € par an, soit 80 € par mois
+    r = analyser(immeuble_simple(taxe_fonciere=9_840), SANS_CREDIT)
+    assert r.cashflow_mensuel == pytest.approx(80)
+    assert not r.eligible_top4
+
+
+def test_rg63_cashflow_de_100_euros_eligible():
+    # 10 800 - 9 600 = 1 200 € par an, soit 100 € par mois
+    r = analyser(immeuble_simple(taxe_fonciere=9_600), SANS_CREDIT)
+    assert r.cashflow_mensuel == pytest.approx(100)
+    assert r.eligible_top4
+
+
 def test_rg64_bien_eligible():
     assert analyser(immeuble_simple(), SANS_CREDIT).eligible_top4
 

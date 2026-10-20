@@ -13,7 +13,7 @@ Pour chaque bien, il calcule, **avant impôt** :
 - le **cashflow mensuel** et l'effort d'épargne s'il est négatif ;
 - le **taux d'endettement** après opération (règle HCSF de 35 %, loyers retenus à 70 %) ;
 - la position par rapport à l'**enveloppe de financement** (260 000 € cible, 300 000 € maximum) ;
-- l'**éligibilité au top 4** : seuil de rendement brut atteint (10 % immeuble, 12 % courte durée) et cashflow d'au moins 50 € par mois.
+- l'**éligibilité au top 4** : seuil de rendement brut atteint (10 % immeuble, 12 % courte durée) et cashflow d'au moins 100 € par mois.
 
 Il compare plusieurs biens et les classe du meilleur au moins bon cashflow.
 
