@@ -45,5 +45,5 @@ biens = [
 ]
 
 if __name__ == "__main__":
-    print("Analyse avant impôt — apport 15 000 €, prêt 20 ans à 3,5 %\n")
+    print("Analyse avant impôt — apport 15 000 €, prêt 20 ans à 3,5 %, assurance 0,30 %\n")
     print(tableau_texte(comparer(biens, financement)))
