@@ -3,7 +3,7 @@
 Ce document décrit **ce que calcule le programme et comment**, en langage métier.
 Chaque règle porte un identifiant (`RG-xx`) que l'on peut citer dans une demande d'évolution ou une pull request. Les tests automatisés portent le numéro de la règle qu'ils vérifient.
 
-Version couverte : **v2, analyse avant impôt, alignée sur la tâche planifiée « Veille immobilière cashflow »**.
+Version couverte : **v2.1, analyse avant impôt, alignée sur la tâche planifiée « Veille immobilière cashflow »**.
 
 ---
 
@@ -87,8 +87,8 @@ Logement meublé loué à la nuitée, géré par une conciergerie.
 | RG-60 | **Seuil de rendement brut** : 10 % pour un immeuble de rapport, 12 % pour une location courte durée. Un bien l'atteint si son rendement brut est supérieur ou égal au seuil. Cible : 10 à 12 %. |
 | RG-61 | La comparaison **classe les biens par cashflow mensuel décroissant**. |
 | RG-62 | Sur option, la comparaison **écarte les biens qui n'atteignent pas leur seuil** de rendement brut. |
-| RG-63 | Un cashflow inférieur à **50 € par mois** est considéré comme « quasi nul ». |
-| RG-64 | Un bien est **éligible au top 4** s'il atteint son seuil de rendement brut **et** dégage un cashflow d'au moins 50 € par mois. Un bien au cashflow négatif ou quasi nul n'entre pas dans le top 4, même si son rendement brut atteint le seuil. |
+| RG-63 | Un cashflow inférieur à **100 € par mois** est considéré comme « quasi nul ». |
+| RG-64 | Un bien est **éligible au top 4** s'il atteint son seuil de rendement brut **et** dégage un cashflow d'au moins 100 € par mois. Un bien au cashflow négatif ou quasi nul n'entre pas dans le top 4, même si son rendement brut atteint le seuil. |
 | RG-65 | Le dépassement du taux d'endettement de 35 % et le dépassement de l'enveloppe cible ne retirent pas le bien du classement : ils produisent une **alerte** affichée avec le résultat. |
 
 ## 8. Limites connues
@@ -106,6 +106,7 @@ Logement meublé loué à la nuitée, géré par une conciergerie.
 |---|---|
 | v1 | Moteur de calcul initial. Rendement brut sur le prix d'achat. |
 | v2 | Alignement sur la tâche planifiée : rendement brut sur le coût total (RG-50), assurance 0,30 % (RG-23), durée maximale 25 ans (RG-21), taux d'endettement HCSF (RG-26), enveloppe de financement (RG-27), local commercial (RG-36, RG-37), taxe foncière estimée (RG-38), éligibilité au top 4 (RG-63, RG-64), alertes (RG-65). |
+| v2.1 | Seuil de cashflow « quasi nul » relevé de 50 € à 100 € par mois (RG-63, RG-64). |
 
 ## Tenir ce document à jour
 

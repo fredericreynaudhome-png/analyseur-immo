@@ -19,7 +19,7 @@ from .financement import (
 Bien = Union[ImmeubleDeRapport, LocationCourteDuree]
 
 # RG-63 : en dessous de ce cashflow mensuel, le bien est considéré « quasi nul ».
-CASHFLOW_MENSUEL_MINIMUM = 50.0
+CASHFLOW_MENSUEL_MINIMUM = 100.0
 
 ENVELOPPE_CIBLE = "dans l'enveloppe cible"
 ENVELOPPE_A_CONFIRMER = "au-delà de l'enveloppe cible, finançabilité à confirmer"
