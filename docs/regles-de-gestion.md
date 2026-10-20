@@ -3,7 +3,7 @@
 Ce document décrit **ce que calcule le programme et comment**, en langage métier.
 Chaque règle porte un identifiant (`RG-xx`) que l'on peut citer dans une demande d'évolution ou une pull request. Les tests automatisés portent le numéro de la règle qu'ils vérifient.
 
-Version couverte : **v2.1, analyse avant impôt, alignée sur la tâche planifiée « Veille immobilière cashflow »**.
+Version couverte : **v2.2, analyse avant impôt, alignée sur la tâche planifiée « Veille immobilière cashflow »**.
 
 ---
 
@@ -90,11 +90,12 @@ Logement meublé loué à la nuitée, géré par une conciergerie.
 | RG-63 | Un cashflow inférieur à **100 € par mois** est considéré comme « quasi nul ». |
 | RG-64 | Un bien est **éligible au top 4** s'il atteint son seuil de rendement brut **et** dégage un cashflow d'au moins 100 € par mois. Un bien au cashflow négatif ou quasi nul n'entre pas dans le top 4, même si son rendement brut atteint le seuil. |
 | RG-65 | Le dépassement du taux d'endettement de 35 % et le dépassement de l'enveloppe cible ne retirent pas le bien du classement : ils produisent une **alerte** affichée avec le résultat. |
+| RG-66 | Si un **prix cible de négociation** est fourni, le bien est analysé deux fois : au prix affiché et au prix cible, avec les mêmes loyers, travaux et frais de notaire recalculés sur le prix cible. Le classement retient le résultat au prix cible. |
 
 ## 8. Limites connues
 
 - Pas de fiscalité (LMNP au réel, SCI à l'IS) : prévue dans une étape ultérieure.
-- Pas de scénarios de sensibilité (taux, vacance, travaux) ni de calcul de prix cible de négociation : à venir.
+- Pas de scénarios de sensibilité (taux, vacance, travaux) : à venir. Le prix cible de négociation est fourni par la veille, le programme recalcule la rentabilité à ce prix (RG-66).
 - Pas de prise en compte de la revente ni de l'enrichissement par remboursement du capital.
 - Hors programme, restent du ressort de la veille : la recherche des annonces, l'analyse de la demande locative, la vérification des restrictions de location courte durée et du DPE, le chiffrage des travaux.
 
@@ -107,6 +108,7 @@ Logement meublé loué à la nuitée, géré par une conciergerie.
 | v1 | Moteur de calcul initial. Rendement brut sur le prix d'achat. |
 | v2 | Alignement sur la tâche planifiée : rendement brut sur le coût total (RG-50), assurance 0,30 % (RG-23), durée maximale 25 ans (RG-21), taux d'endettement HCSF (RG-26), enveloppe de financement (RG-27), local commercial (RG-36, RG-37), taxe foncière estimée (RG-38), éligibilité au top 4 (RG-63, RG-64), alertes (RG-65). |
 | v2.1 | Seuil de cashflow « quasi nul » relevé de 50 € à 100 € par mois (RG-63, RG-64). |
+| v2.2 | Analyse au prix cible de négociation (RG-66) et porte d'entrée pour la veille hebdomadaire (voir [format du fichier d'entrée](format-entree.md)). |
 
 ## Tenir ce document à jour
 

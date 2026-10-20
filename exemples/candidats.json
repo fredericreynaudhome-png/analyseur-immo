@@ -1,0 +1,36 @@
+{
+  "biens": [
+    {
+      "id": "exemple-immeuble",
+      "strategie": "immeuble",
+      "nom": "Immeuble 4 lots + commerce (fictif)",
+      "ville": "Ville fictive",
+      "prix": 165000,
+      "prix_cible": 145000,
+      "travaux": 30000,
+      "loyers_mensuels": [520, 480, 480, 450],
+      "loyer_commercial_mensuel": 600,
+      "bail_commercial_en_cours": true,
+      "charges_non_recuperables": 600,
+      "assurance_pno": 600
+    },
+    {
+      "id": "exemple-courte-duree",
+      "strategie": "courte_duree",
+      "nom": "T2 bord de mer (fictif)",
+      "ville": "Ville fictive",
+      "prix": 120000,
+      "prix_cible": 108000,
+      "travaux": 6000,
+      "ameublement": 8000,
+      "prix_nuitee": 110,
+      "taux_occupation": 0.55,
+      "taux_conciergerie": 0.22,
+      "taxe_fonciere": 800,
+      "charges_fonctionnement": 1800,
+      "charges_copropriete": 900,
+      "assurance": 300,
+      "cfe": 300
+    }
+  ]
+}

@@ -41,21 +41,28 @@ Le détail de chaque calcul est décrit dans les **[règles de gestion](docs/reg
 pip install pytest
 python exemple.py        # compare trois biens fictifs
 python -m pytest         # vérifie les règles de gestion
+
+# Analyse d'un fichier de biens candidats, comme le fait la veille hebdomadaire
+python -m analyseur_immo.veille exemples/candidats.json --taux 0.034 --duree 25
 ```
+
+Le format du fichier de biens est décrit dans **[format du fichier d'entrée](docs/format-entree.md)**.
 
 ## Organisation du code
 
 - `analyseur_immo/financement.py` : mensualité, assurance, amortissement, taux d'endettement
 - `analyseur_immo/biens.py` : description d'un immeuble de rapport et d'une location courte durée
 - `analyseur_immo/analyse.py` : indicateurs, éligibilité, alertes, comparaison, affichage
+- `analyseur_immo/veille.py` : porte d'entrée appelée par la veille hebdomadaire
 - `docs/regles-de-gestion.md` : règles de gestion numérotées
+- `docs/format-entree.md` : format du fichier des biens candidats
 - `tests/` : un test par règle, sur des cas vérifiables à la main
 
 ## Feuille de route
 
 1. ~~Moteur de calcul et tests~~
 2. ~~Alignement sur la veille hebdomadaire~~
-3. Branchement de la veille hebdomadaire sur ce programme
+3. Branchement de la veille hebdomadaire sur ce programme (porte d'entrée prête)
 4. Prix cible de négociation et scénarios (taux, vacance, travaux)
 5. Fiscalité : LMNP au réel, SCI à l'IS
 6. Interface web locale (Streamlit)
